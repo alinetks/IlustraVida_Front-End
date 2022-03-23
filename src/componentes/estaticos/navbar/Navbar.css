@@ -1,0 +1,15 @@
+.menu{
+    background: #382a55 !important;
+}
+
+.menu-text{ 
+    color: #fff !important;
+    font-weight: bold !important;
+    margin-right: 5px !important;
+}
+
+.menu-text:hover{ 
+    color: #FFFfff81 !important;
+    font-weight: bold !important;
+}
+

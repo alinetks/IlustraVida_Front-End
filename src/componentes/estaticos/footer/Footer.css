@@ -1,1 +1,17 @@
 
+.rodape{
+    background: #165d8680 !important;
+    color: #382a55 !important;
+}
+
+.icons {
+    color: #382a55 !important;
+}
+
+.icons :hover{
+    color: #382a5580 !important;
+}
+
+.rodape-copy{
+    background: #382a55;
+}

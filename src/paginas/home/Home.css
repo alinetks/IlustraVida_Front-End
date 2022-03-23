@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
 .titulo{
     color:brown;
     text-align: center;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .img{
@@ -8,4 +11,9 @@
     height: 500px;
     display: block;
     margin: 0 auto;
+}
+
+.container{
+    background: linear-gradient(36deg, #2c96d4 8%, #3f078070 80%)!important;
+    color: rgb(255, 255, 255);
 }
