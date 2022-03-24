@@ -1,0 +1,33 @@
+
+.text-decorator-none{
+    text-decoration: none;
+}
+
+.boxform{
+    background: linear-gradient(36deg, #2c96d480 8%, #3f078080 80%)!important;
+}
+
+button{
+    box-shadow: 3;
+}
+
+.MuiTypography-subtitle1{
+    color: #165d86 !important;
+}
+
+.MuiTypography-h3 {
+    color: #165d86 !important;
+}
+
+.MuiButton-containedPrimary{
+    background-color: #165d86 !important;
+}
+
+.imagem{
+    background-image: url(http://localhost:3000/login.gif); 
+    background-repeat: no-repeat; 
+    width: 100vh; 
+    min-height: 100vh; 
+    background-size: cover; 
+    background-position: center;
+}

@@ -1,5 +1,5 @@
 .menu{
-    background: #382a55 !important;
+    background: #13557a !important;
 }
 
 .menu-text{ 
@@ -13,3 +13,16 @@
     font-weight: bold !important;
 }
 
+.MuiTypography-h6{
+    font-family: 'Quicksand', sans-serif !important;
+
+}
+
+.text-decorator-none{
+    text-decoration: none;
+}
+
+.cursor{
+    cursor: pointer;
+    color: #fff;
+}

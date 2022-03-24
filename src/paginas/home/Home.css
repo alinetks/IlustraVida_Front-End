@@ -1,19 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
 .titulo{
-    color:brown;
+    color:#fff;
     text-align: center;
-    font-family: 'Quicksand', sans-serif;
 }
 
-.img{
-    width: 500px;
-    height: 500px;
-    display: block;
-    margin: 0 auto;
+.MuiTypography-h3 {
+    font-family: 'Quicksand', sans-serif !important;
+    color: #fff !important; 
+    font-weight: bold !important;
+}
+.MuiTypography-h5{
+    font-family: 'Quicksand', sans-serif !important;
+    color: #165d86 !important;
+    font-weight: bold !important;
+}
+
+.MuiTypography-subtitle2{
+    font-family: 'Quicksand', sans-serif !important;
 }
 
 .container{
     background: linear-gradient(36deg, #2c96d4 8%, #3f078070 80%)!important;
     color: rgb(255, 255, 255);
+    min-height: 80vh;
+    margin: 0;
+    padding: 0;
+}
+
+.MuiGrid-root img {
+    flex-grow: 0;
+    display: flex;
+    width: 100%;
+    flex-basis: 100%;
+    padding: 0;
+}
+
+.img{width: 100%; padding: 5%;}
+
+button{
+    background-color: #165d86 !important;
+    color: #fff !important;
+}
+button:hover{
+    background-color: #165d8690 !important;
+    color: #fff !important;
 }

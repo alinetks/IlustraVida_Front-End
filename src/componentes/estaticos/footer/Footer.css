@@ -1,17 +1,25 @@
 
 .rodape{
-    background: #165d8680 !important;
-    color: #382a55 !important;
+    background: #27a1e7 !important;
+    color: #fff !important;
+    height: 120px;
 }
 
-.icons {
-    color: #382a55 !important;
+.icons{
+    color: #165d86 !important; 
+}
+
+.icons-size{
+    font-size: 60px !important;
 }
 
 .icons :hover{
-    color: #382a5580 !important;
+    color: #ffffff90 !important;
 }
 
 .rodape-copy{
-    background: #382a55;
+    background: #165d86;
+    height: 60px;
 }
+
+
