@@ -10,11 +10,13 @@ function Navbar() {
         <>
             <AppBar className='menu' position="static">
                 <Toolbar variant="dense">
-                    <Box className='menu-text' style={{ cursor: "pointer"}} >
+                <Link to='/' className='text-decorator-none'>
+                <Box className='menu-text' display="flex" justifyContent="start" marginTop={1}>
                         <Typography variant="h6" color="inherit">
-                            IlustraVida
+                            <img src='/icon2.png' width={80} height={40} />
                         </Typography>
                     </Box>
+                </Link>
 
                     <Box display="flex" justifyContent="start">
                         <Link to='/home' className='text-decorator-none'>

@@ -39,10 +39,11 @@
 .img{width: 100%; padding: 5%;}
 
 button{
-    background-color: #165d86 !important;
+    background: linear-gradient(10deg, #2c96d470 25%, #3f078070 90%)!important;
     color: #fff !important;
 }
 button:hover{
     background-color: #165d8690 !important;
     color: #fff !important;
 }
+

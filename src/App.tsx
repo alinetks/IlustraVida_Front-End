@@ -9,6 +9,7 @@ import {Grid} from '@material-ui/core'
 
 import './App.css';
 import Login from './paginas/login/Login';
+import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 
 //let nome = 'Alinetks'
 
@@ -27,6 +28,10 @@ function App() {
           
           <Route path='/login'>
             <Login />
+          </Route>
+
+          <Route path='/cadastrar'>
+            <CadastroUsuario />
           </Route>
 
           <Route path='/home'>
