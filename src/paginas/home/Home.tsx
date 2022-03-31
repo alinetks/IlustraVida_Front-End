@@ -5,7 +5,7 @@ import { shadows } from '@material-ui/system';
 import TabPostagem from "../../componentes/postagens/tabpostagem/TabPostagem";
 
 function Home(){
-    return(
+    return( 
         <>
             <Grid container className="container" direction="row" justifyContent="center" alignItems="center">
                 <Grid alignItems="center" item sm={6}>

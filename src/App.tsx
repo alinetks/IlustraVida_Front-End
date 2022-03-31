@@ -12,6 +12,10 @@ import Login from './paginas/login/Login';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 import ListaTema from './componentes/temas/listatema/ListaTema';
 import ListaPostagem from './componentes/postagens/listapostagem/ListaPostagem';
+import CadastrarPostagem from './componentes/postagens/cadastrarPostagem/CadastrarPostagem';
+import CadastrarTema from './componentes/temas/cadastrarTema/CadastrarTema';
+import DeletarPostagem from './componentes/postagens/deletarPostagem/DeletarPostagem';
+import DeletarTema from './componentes/temas/deletarTema/DeletarTema';
 
 //let nome = 'Alinetks'
 
@@ -46,6 +50,25 @@ function App() {
 
           <Route path='/home'>
             <Home />
+          </Route>
+
+          <Route exact path='/formularioPostagem'>
+            <CadastrarPostagem />
+          </Route>
+          <Route exact path='/formularioPostagem/:id'>
+            <CadastrarPostagem />
+          </Route>
+          <Route exact path='/formularioTema'>
+            <CadastrarTema />
+          </Route>
+          <Route exact path='/formularioTema/:id'>
+            <CadastrarTema />
+          </Route>
+          <Route path='/deletarPostagem/:id'>
+            <DeletarPostagem />
+          </Route>
+          <Route path='/deletarTema/:id'>
+            <DeletarTema />
           </Route>
 
         </div>
