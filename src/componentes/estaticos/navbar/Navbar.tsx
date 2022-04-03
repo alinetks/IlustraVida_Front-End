@@ -5,6 +5,7 @@ import { AppBar, IconButton, Toolbar, Typography } from '@material-ui/core'
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
+import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 import './Navbar.css';
 
 function Navbar() {
@@ -25,7 +26,7 @@ function Navbar() {
                     <Link to='/' className='text-decorator-none'>
                         <Box className='menu-text' display="flex" justifyContent="start" marginTop={1}>
                             <Typography variant="h6" color="inherit">
-                                <img src='/icon2.png' width={80} height={40} />
+                                <HomeRoundedIcon width={70} height={60} />
                             </Typography>
                         </Box>
                     </Link>

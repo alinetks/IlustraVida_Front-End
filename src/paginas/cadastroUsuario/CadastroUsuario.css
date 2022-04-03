@@ -1,15 +1,9 @@
-.imagem2{
-    background-image: url(http://localhost:3000/cadastro.gif); 
-    background-repeat: no-repeat; 
-    width: 100vh; 
-    min-height: 100vh; 
-    background-size: cover; 
-    background-position: center;
+.imagem2 img{
+    min-height: 100vh;
+    margin-right: 10px;
+    width: 65vw !important;
 }
 
-.boxform{
-    background: linear-gradient(36deg, #3f078080 8%, #2c96d480 80%)!important;
-}
 
 .btnCancelar{
     margin-right: 10px !important;
@@ -18,3 +12,8 @@
 .btnCadastrar{
     margin-left: 10px !important;
 }
+
+.MuiInputBase-input{
+    color: #2f2b43 !important;
+}
+

@@ -10,11 +10,11 @@ import './Footer.css';
 function Footer() {
     return (
         <>
-            <Grid container direction="row" justifyContent="center" alignItems="center">
+            <Grid container className='estrutura-rodape' justifyContent="center" alignItems="center">
                 <Grid alignItems="center" item xs={12}>
                     <Box className='rodape'>
                         <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                            <Typography variant="h5" align="center" gutterBottom>Siga-nos nas redes sociais </Typography>
+                            <Typography variant="h5" align="center" gutterBottom className='foot-h5'>Siga-nos nas redes sociais </Typography>
                         </Box>
                         <Box display="flex" alignItems="center" justifyContent="center">
                             <a className='icons' href="https://www.facebook.com/generationbrasil" target="_blank">
@@ -30,11 +30,11 @@ function Footer() {
                     </Box>
                     <Box className='rodape-copy'>
                         <Box paddingTop={1}>
-                            <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "white" }} >© 2020 Copyright:</Typography>
+                            <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "#b94f51" }} >© 2020 Copyright:</Typography>
                         </Box>
                         <Box>
                             <a target="_blank" href="https://brasil.generation.org">
-                                <Typography variant="subtitle2" gutterBottom style={{ color: "white" }} align="center">brasil.generation.org</Typography>
+                                <Typography variant="subtitle2" gutterBottom style={{ color: "#b94f51" }} align="center">brasil.generation.org</Typography>
                             </a>
                         </Box>
                     </Box>

@@ -8,7 +8,7 @@ import './TabPostagem.css';
 function TabPostagem() {
     const [value, setValue] = useState('1')
     function handleChange(event: React.ChangeEvent<{}>, newValue: string){
-        setValue(newValue);
+        setValue(newValue); 
     }
   return (
     <>
@@ -20,13 +20,17 @@ function TabPostagem() {
           </Tabs>
         </AppBar>
         <TabPanel value="1" className='tab-exib'>
-          <Box display="flex" flexWrap="wrap" justifyContent="center">
+          <Box display="flex" flexWrap="wrap" justifyContent="center"> 
             <ListaPostagem />
           </Box>
         </TabPanel>
         <TabPanel value="2" className='tab-exib'>
-          <Typography variant="h5" id="h5" gutterBottom color="textPrimary" component="h5" align="center" className="titulo">Sobre-nós</Typography>
-          <Typography variant="body1" gutterBottom align="justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos ut eveniet natus totam et, voluptate dicta tempore alias, odio nobis non eius cupiditate minima inventore pariatur! Ipsum itaque consectetur voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo velit consequuntur suscipit fugiat, nam quis quod quaerat veritatis et, vel ratione beatae, facere neque! Quo animi porro voluptate saepe deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore adipisci, officia aut quidem dolorum deserunt iure dolorem doloribus velit nobis quas consequatur at ullam odit, nesciunt est nulla nihil excepturi!</Typography>
+          <Typography variant="h5" id="h5" gutterBottom color="textPrimary" component="h5" align="center" className="h5">Sobre-nós</Typography>
+          <Typography variant="body1" className="body1" gutterBottom align="justify">Olá! Esse é o blog pessoal da Queen, onde relembramos as grandes lições de vida que as animações trouxeram para a nossa história. 
+                                                                    Ilustrando a vida através de histórias e desenhos inspiradores e encantadores. 
+                                                                    A Queen é uma jovem ilustradora e otimista, que foi profundamente tocada por histórias de heróis e heróinas como a Mulan, que 
+                                                                    com sua coragem e senso de dever, mudou para sempre a forma como sua nação veria as mulheres. 
+                                                                    Essa história, é apenas uma história, mas que inspirou-a profundamente a tornar realidade. </Typography>
         </TabPanel>
       </TabContext>
     </>

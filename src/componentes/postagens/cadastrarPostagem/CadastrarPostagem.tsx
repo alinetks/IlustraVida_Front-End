@@ -6,26 +6,22 @@ import Tema from '../../../models/Tema';
 import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Postagem';
 import { busca, buscaId, post, put } from '../../../services/Service';
+import './CadastrarPostagem.css'
 
-function CadastrarPostagem() {
-    let history = useHistory();
-    const { id } = useParams<{ id: string }>();
+function CadastrarPostagem() { 
+    let history = useHistory()
+
+    const { id } = useParams<{ id: string }>()
+
     const [temas, setTemas] = useState<Tema[]>([])
-    const [token, setToken] = useLocalStorage('token');
 
-    useEffect(() => {
-        if (token == "") {
-            alert("Você precisa estar logado")
-            history.push("/login")
+    const [token, setToken] = useLocalStorage('token')
 
-        }
-    }, [token])
+    const [tema, setTema] = useState<Tema>({
+        id: 0,
+        descricao: ''
+    })
 
-    const [tema, setTema] = useState<Tema>(
-        {
-            id: 0,
-            descricao: ''
-        })
     const [postagem, setPostagem] = useState<Postagem>({
         id: 0,
         titulo: '',
@@ -33,7 +29,14 @@ function CadastrarPostagem() {
         tema: null
     })
 
-    useEffect(() => { 
+    useEffect(() => {
+        if (token === "") {
+            alert("Você precisa estar logado")
+            history.push("/login")
+        }
+    }, [token])
+
+    useEffect(() => {
         setPostagem({
             ...postagem,
             tema: tema
@@ -42,13 +45,13 @@ function CadastrarPostagem() {
 
     useEffect(() => {
         getTemas()
-        if (id !== undefined) {
+        if (id !== '') {
             findByIdPostagem(id)
         }
     }, [id])
 
     async function getTemas() {
-        await busca("/tema", setTemas, {
+        await busca("/temas", setTemas, {
             headers: {
                 'Authorization': token
             }
@@ -64,45 +67,51 @@ function CadastrarPostagem() {
     }
 
     function updatedPostagem(e: ChangeEvent<HTMLInputElement>) {
-
         setPostagem({
             ...postagem,
             [e.target.name]: e.target.value,
             tema: tema
         })
-
     }
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
 
         if (id !== undefined) {
-            put(`/postagens`, postagem, setPostagem, {
-                headers: {
-                    'Authorization': token
-                }
-            })
-            alert('Postagem atualizada com sucesso');
+            try {
+                await put(`/postagens`, postagem, setPostagem, {
+                    headers: {
+                        'Authorization': token
+                    }
+                })
+                alert('Postagem atualizada com sucesso');
+            } catch (error) {
+                alert("Erro ao atualizar, verifique os campos")
+            }
+
         } else {
-            post(`/postagens`, postagem, setPostagem, {
-                headers: {
-                    'Authorization': token
-                }
-            })
-            alert('Postagem cadastrada com sucesso');
+            try {
+                await post(`/postagens`, postagem, setPostagem, {
+                    headers: {
+                        'Authorization': token
+                    }
+                })
+                alert('Postagem cadastrada com sucesso');
+            } catch (error) {
+                alert("Erro ao cadastrar, verifique os campos")
+            }
         }
         back()
-
     }
 
     function back() {
-        history.push('/posts')
+        history.push('/postagens')
     }
 
     return (
-        <Container maxWidth="sm" className="topo">
-            <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro postagem</Typography>
+        <Container maxWidth="sm" className='largura'>
+            <form onSubmit={onSubmit} className='cadastra-postagem'>
+                <Typography variant="h3" className='h1-postagem' component="h1" align="center" >Cadastrar postagem</Typography>
                 <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
                 <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
 
@@ -111,7 +120,7 @@ function CadastrarPostagem() {
                     <Select
                         labelId="demo-simple-select-helper-label"
                         id="demo-simple-select-helper"
-                        onChange={(e) => buscaId(`/tema/${e.target.value}`, setTema, {
+                        onChange={(e) => buscaId(`/temas/${e.target.value}`, setTema, {
                             headers: {
                                 'Authorization': token
                             }

@@ -51,13 +51,13 @@ function Login() {
             <Grid alignItems="center" xs={6}>
                 <Box paddingX={20}>
                     <form onSubmit={onSubmit}>
-                        <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' style={{ fontWeight: 'bold' }}>
+                        <Typography variant='h3' gutterBottom className="h3" component='h3' align='center' style={{ fontWeight: 'bold' }}>
                             Entrar
                         </Typography>
                         <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='email' variant="outlined" name='usuario' margin='normal' fullWidth />
                         <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' variant="outlined" name='senha' margin='normal' type='password' fullWidth />
                         <Box marginTop={2} textAlign='center' >
-                            <Button type='submit' variant="contained" color="primary">
+                            <Button type='submit' variant="contained">
                                 Logar
                             </Button>
                         </Box>
@@ -68,7 +68,7 @@ function Login() {
                             <Typography variant="subtitle1" gutterBottom align='center'>Não tem uma conta?</Typography>
                         </Box>
                         <Link to='/cadastrar' className='text-decorator-none'>
-                            <Typography variant="subtitle1" gutterBottom align='center' style={{ fontWeight: 'bold' }}> Cadastre-se </Typography>
+                            <Typography variant="subtitle1" id="cadastre-se" gutterBottom align='center' style={{ fontWeight: 'bold' }}> Cadastre-se </Typography>
                         </Link>
                     </Box>
 
@@ -76,8 +76,6 @@ function Login() {
             </Grid>
 
             <Grid xs={6} className='imagem'>
-
-
             </Grid>
         </Grid>
     );

@@ -1,12 +1,14 @@
-
+.estrutura-rodape{
+    position: flex;
+}
 .rodape{
-    background: #4da3f8 !important;
-    color: #fff !important;
+    background: #2f2b43 !important;
+    color: #b94f51 !important;
     height: 120px;
 }
 
 .icons{
-    color: #165d86 !important; 
+    color: #b94f51 !important; 
 }
 
 .icons-size{
@@ -18,8 +20,11 @@
 }
 
 .rodape-copy{
-    background: #165d86;
-    height: 60px;
+    background: #2f2b43 !important;
+    color: #b94f51 !important;
 }
 
+.foot-h5{
+    color: #b94f51 !important;
+}
 

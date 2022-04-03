@@ -34,13 +34,13 @@ function ListaTema() {
     {
       temas.map(tema =>(
         
-      <Box m={2} >
-        <Card variant="outlined">
+      <Box m={2} className='back-tema' display="flex" justifyContent="center">
+        <Card variant="outlined" className='ajust-tema'>
           <CardContent>
-            <Typography color="textSecondary" gutterBottom>
+            <Typography gutterBottom component="h2">
               Tema
             </Typography>
-            <Typography variant="h5" component="h2">
+            <Typography variant="h5" className='tema-style'>
               {tema.descricao}
             </Typography>
           </CardContent>
