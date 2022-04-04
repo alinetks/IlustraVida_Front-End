@@ -16,17 +16,20 @@ import CadastrarPostagem from './componentes/postagens/cadastrarPostagem/Cadastr
 import CadastrarTema from './componentes/temas/cadastrarTema/CadastrarTema';
 import DeletarPostagem from './componentes/postagens/deletarPostagem/DeletarPostagem';
 import DeletarTema from './componentes/temas/deletarTema/DeletarTema';
+import { Provider } from 'react-redux';
+import store from './store/tokens/store';
 
 //let nome = 'Alinetks'
 
 
 function App() {
   return (
+    <Provider store={store}>
     <Router>
       <Navbar />
 
       <Switch>
-        <div>
+        <div style={{minHeight: '100vh'}}>
           
         <Route exact path='/'>
             <Login />
@@ -47,42 +50,36 @@ function App() {
 
           <Route path='/postagens'>
             <ListaPostagem/>
-            <Footer />
           </Route>
 
           <Route path='/home'>
             <Home />
-            <Footer />
           </Route>
 
           <Route exact path='/formularioPostagem'>
             <CadastrarPostagem />
-            <Footer />
           </Route>
           <Route exact path='/formularioPostagem/:id'>
             <CadastrarPostagem />
-            <Footer />
           </Route>
           <Route exact path='/formularioTema'>
             <CadastrarTema />
-            <Footer />
           </Route>
           <Route exact path='/formularioTema/:id'>
             <CadastrarTema />
-            <Footer />
           </Route>
           <Route path='/deletarPostagem/:id'>
             <DeletarPostagem />
-            <Footer />
           </Route>
           <Route path='/deletarTema/:id'>
             <DeletarTema />
-            <Footer />
           </Route>
 
         </div>
       </Switch>
+      <Footer />
     </Router>
+    </Provider>
   );
 }
 

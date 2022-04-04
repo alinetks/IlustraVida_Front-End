@@ -1,27 +1,33 @@
 import React, { useEffect } from "react";
-import {Typography, Box, Grid, Button} from '@material-ui/core';
+import { Typography, Box, Grid, Button } from '@material-ui/core';
 import './Home.css';
 import { shadows } from '@material-ui/system';
 import TabPostagem from "../../componentes/postagens/tabpostagem/TabPostagem";
 import { useHistory } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
 import ModalPostagem from "../../componentes/postagens/modalPostagem/ModalPostagem";
+import ModalTema from "../../componentes/temas/modalTemas/ModalTema";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../store/tokens/tokensReducer";
 
-function Home(){
+function Home() {
 
     let history = useHistory();
-    const [token, setToken] = useLocalStorage('token');
-    
+    const token = useSelector<TokenState, TokenState ["tokens"]>(
+        (state) => state.tokens
+    )
+
+
     useEffect(() => {
-      if (token == "") {
-          alert("Você precisa estar logado")
-          history.push("/login")
-  
-      }
-  }, [token])
-  
-    return( 
-        <> 
+        if (token == "") {
+            alert("Você precisa estar logado")
+            history.push("/login")
+
+        }
+    }, [token])
+
+    return (
+        <>
             <Grid container className="container" direction="row" justifyContent="center" alignItems="center">
                 <Grid alignItems="center" item xs={6}>
                     <Box paddingX={10} >
@@ -29,11 +35,11 @@ function Home(){
                         <Typography variant="h5" gutterBottom className="h5" align="center">Vem ilustrar a vida com a gente!</Typography>
                     </Box>
                     <Box display="flex" justifyContent="center">
-                    <Box boxShadow={3} marginRight={1}>
+                        <Box boxShadow={3} marginRight={1}>
                             <ModalPostagem />
                         </Box>
                         <Box boxShadow={3} marginRight={1}>
-                        <Button variant="outlined">Ver Postagens</Button>
+                            <ModalTema />
                         </Box>
                     </Box>
                 </Grid>

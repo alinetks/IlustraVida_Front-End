@@ -5,11 +5,15 @@ import { busca } from '../../../services/Service';
 import Postagem from '../../../models/Postagem';
 import useLocalStorage from 'react-use-localstorage';
 import './ListaPostagem.css';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 function ListaPostagem() {
   let history = useHistory()
-  const [token, setToken] = useLocalStorage('token')
   const [postagens, setPostagens] = useState<Postagem[]>([])
+  const token = useSelector<TokenState, TokenState ["tokens"]>(
+    (state) => state.tokens
+)
 
   async function pegaPostagens() {
     await busca(`/postagens`, setPostagens, {

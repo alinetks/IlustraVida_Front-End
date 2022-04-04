@@ -5,11 +5,15 @@ import useLocalStorage from 'react-use-localstorage';
 import Tema from '../../../models/Tema';
 import { busca } from '../../../services/Service';
 import './ListaTema.css';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 function ListaTema() {
 
   let history = useHistory()
-  const [token, setToken] = useLocalStorage('token')
+  const token = useSelector<TokenState, TokenState ["tokens"]>(
+    (state) => state.tokens
+)
   const [temas, setTemas] = useState<Tema[]>([])
 
   async function pegaTemas() {
@@ -49,14 +53,14 @@ function ListaTema() {
 
               <Link to={`/formularioTema/${tema.id}`} className="text-decorator-none">
                 <Box mx={1}>
-                  <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                  <Button variant="contained" className="botton" id='space3' size='small' color="primary" >
                     atualizar
                   </Button>
                 </Box>
               </Link>
               <Link to={`/deletarTema/${tema.id}`} className="text-decorator-none">
                 <Box mx={1}>
-                  <Button variant="contained" size='small' color="secondary">
+                  <Button variant="contained" className="botton" size='small' color="secondary">
                     deletar
                   </Button>
                 </Box>
