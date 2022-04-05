@@ -3,17 +3,23 @@ import { Link, useHistory } from 'react-router-dom'
 import { Box, Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import { busca } from '../../../services/Service';
 import Postagem from '../../../models/Postagem';
-import useLocalStorage from 'react-use-localstorage';
 import './ListaPostagem.css';
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { UserState } from '../../../store/tokens/tokensReducer';
 
 function ListaPostagem() {
   let history = useHistory()
   const [postagens, setPostagens] = useState<Postagem[]>([])
-  const token = useSelector<TokenState, TokenState ["tokens"]>(
+  const token = useSelector<UserState, UserState ["tokens"]>(
     (state) => state.tokens
 )
+
+useEffect(() => {
+  if (token == ""){
+    alert("Você precisa estar logado.")
+    history.push("/login")
+  }
+}, [token])
 
   async function pegaPostagens() {
     await busca(`/postagens`, setPostagens, {
@@ -25,12 +31,6 @@ function ListaPostagem() {
     pegaPostagens()
   }, [postagens.length]) //length = comprimento
 
-  useEffect(() => {
-    if (token === ""){
-      alert("Você precisa estar logado.")
-      history.push("/login")
-    }
-  }, [token])
 
   return ( 
     <>

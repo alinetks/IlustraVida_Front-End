@@ -6,7 +6,7 @@ import { buscaId, post, put } from '../../../services/Service'
 import Tema from '../../../models/Tema'
 import './CadastrarTema.css'
 import { useSelector } from 'react-redux'
-import { TokenState } from '../../../store/tokens/tokensReducer'
+import { UserState } from '../../../store/tokens/tokensReducer'
 
 
 function CadastroTema() {
@@ -15,7 +15,7 @@ function CadastroTema() {
 
     const { id } = useParams<{ id: string }>()
 
-    const token = useSelector<TokenState, TokenState ["tokens"]>(
+    const token = useSelector<UserState, UserState ["tokens"]>(
         (state) => state.tokens
     )
 

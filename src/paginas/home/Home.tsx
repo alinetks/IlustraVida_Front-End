@@ -1,30 +1,29 @@
 import React, { useEffect } from "react";
 import { Typography, Box, Grid, Button } from '@material-ui/core';
-import './Home.css';
-import { shadows } from '@material-ui/system';
 import TabPostagem from "../../componentes/postagens/tabpostagem/TabPostagem";
-import { useHistory } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
+import { Link, useHistory } from 'react-router-dom'
 import ModalPostagem from "../../componentes/postagens/modalPostagem/ModalPostagem";
 import ModalTema from "../../componentes/temas/modalTemas/ModalTema";
 import { useSelector } from "react-redux";
-import { TokenState } from "../../store/tokens/tokensReducer";
+import { UserState } from "../../store/tokens/tokensReducer";
+
+import './Home.css';
+
 
 function Home() {
 
-    let history = useHistory();
-    const token = useSelector<TokenState, TokenState ["tokens"]>(
-        (state) => state.tokens
-    )
+    let history = useHistory()
 
+  const token = useSelector<UserState, UserState["tokens"]>(
+    (state) => state.tokens
+  )
 
-    useEffect(() => {
-        if (token == "") {
-            alert("Você precisa estar logado")
-            history.push("/login")
-
-        }
-    }, [token])
+  useEffect(() => {
+    if (token === "") {
+      alert("Você precisa estar logado")
+      history.push('/login')
+    }
+  }, [token])
 
     return (
         <>

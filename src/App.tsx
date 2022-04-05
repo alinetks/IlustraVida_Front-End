@@ -2,9 +2,9 @@ import React from 'react';
 import Navbar from './componentes/estaticos/navbar/Navbar'
 import Footer from './componentes/estaticos/footer/Footer'
 import Home from './paginas/home/Home';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-import {Grid} from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 
 
 import './App.css';
@@ -18,6 +18,7 @@ import DeletarPostagem from './componentes/postagens/deletarPostagem/DeletarPost
 import DeletarTema from './componentes/temas/deletarTema/DeletarTema';
 import { Provider } from 'react-redux';
 import store from './store/tokens/store';
+import Perfil from './paginas/perfil/Perfil';
 
 //let nome = 'Alinetks'
 
@@ -25,60 +26,67 @@ import store from './store/tokens/store';
 function App() {
   return (
     <Provider store={store}>
-    <Router>
-      <Navbar />
+      <Router>
+        <Navbar />
+        <Switch>
+          <div style={{ minHeight: "100vh" }}>
 
-      <Switch>
-        <div style={{minHeight: '100vh'}}>
-          
-        <Route exact path='/'>
-            <Login />
-          </Route>
-          
-          <Route path='/login'>
-            <Login />
-          </Route>
+            <Route exact path="/">
+              <Login />
+            </Route>
 
-          <Route path='/cadastrar'>
-            <CadastroUsuario />
-          </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
 
-          <Route path='/temas'>
-            <ListaTema />
-            <Footer />
-          </Route>
+            <Route path="/home">
+              <Home />
+            </Route>
 
-          <Route path='/postagens'>
-            <ListaPostagem/>
-          </Route>
+            <Route path="/cadastro">
+              <CadastroUsuario />
+            </Route>
 
-          <Route path='/home'>
-            <Home />
-          </Route>
+            <Route path="/temas">
+              <ListaTema />
+            </Route>
 
-          <Route exact path='/formularioPostagem'>
-            <CadastrarPostagem />
-          </Route>
-          <Route exact path='/formularioPostagem/:id'>
-            <CadastrarPostagem />
-          </Route>
-          <Route exact path='/formularioTema'>
-            <CadastrarTema />
-          </Route>
-          <Route exact path='/formularioTema/:id'>
-            <CadastrarTema />
-          </Route>
-          <Route path='/deletarPostagem/:id'>
-            <DeletarPostagem />
-          </Route>
-          <Route path='/deletarTema/:id'>
-            <DeletarTema />
-          </Route>
+            <Route path="/postagens">
+              <ListaPostagem />
+            </Route>
 
-        </div>
-      </Switch>
-      <Footer />
-    </Router>
+            <Route exact path='/formularioPostagem'>
+              <CadastrarPostagem />
+            </Route>
+
+            <Route exact path='/formularioPostagem/:id'>
+              <CadastrarPostagem />
+            </Route>
+
+            <Route exact path='/formularioTema'>
+              <CadastrarTema />
+            </Route>
+
+            <Route exact path='/formularioTema/:id'>
+              <CadastrarTema />
+            </Route>
+
+            <Route path='/deletarPostagem/:id'>
+              <DeletarPostagem />
+            </Route>
+
+            <Route path='/deletarTema/:id'>
+              <DeletarTema />
+            </Route>
+
+            <Route path='/perfil'>
+              <Perfil />
+            </Route>
+
+          </div>
+        </Switch>
+        <Footer />
+      </Router>
     </Provider>
   );
 }

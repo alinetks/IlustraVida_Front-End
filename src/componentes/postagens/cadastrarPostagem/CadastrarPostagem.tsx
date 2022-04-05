@@ -8,7 +8,7 @@ import Postagem from '../../../models/Postagem';
 import { busca, buscaId, post, put } from '../../../services/Service';
 import './CadastrarPostagem.css'
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { UserState } from '../../../store/tokens/tokensReducer';
 
 function CadastrarPostagem() { 
     let history = useHistory()
@@ -17,7 +17,7 @@ function CadastrarPostagem() {
 
     const [temas, setTemas] = useState<Tema[]>([])
 
-    const token = useSelector<TokenState, TokenState ["tokens"]>(
+    const token = useSelector<UserState, UserState ["tokens"]>(
         (state) => state.tokens
     )
 

@@ -7,12 +7,12 @@ import { Typography, Box, Grid, Button } from '@material-ui/core';
 
 import './Footer.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { UserState } from '../../../store/tokens/tokensReducer';
 import { useHistory } from 'react-router-dom';
 
 function Footer() {
 
-    const token = useSelector<TokenState, TokenState['tokens']>(
+    const token = useSelector<UserState, UserState['tokens']>(
         (state) => state.tokens
     )
     let history = useHistory();

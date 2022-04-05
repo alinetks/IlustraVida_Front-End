@@ -9,10 +9,10 @@ import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 import './Navbar.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToken } from '../../../store/tokens/actions';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { UserState } from '../../../store/tokens/tokensReducer';
 
 function Navbar() {
-    const token = useSelector<TokenState, TokenState['tokens']>(
+    const token = useSelector<UserState, UserState['tokens']>(
         (state) => state.tokens
     )
     let history = useHistory();
@@ -52,6 +52,13 @@ function Navbar() {
                             </Typography>
                         </Box>
                     </Link>
+                    <Link to="/perfil" className="text-decorator-none">
+                            <Box mx={1} className='menu-text cursor'>
+                                <Typography variant="h6" color="inherit">
+                                    perfil
+                                </Typography>
+                            </Box>
+                        </Link>
                     <Box className='menu-text cursor' mx={1} onClick={goLogout}>
                         <Typography variant="h6" color="inherit">
                             logout
