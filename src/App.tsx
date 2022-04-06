@@ -19,6 +19,8 @@ import DeletarTema from './componentes/temas/deletarTema/DeletarTema';
 import { Provider } from 'react-redux';
 import store from './store/tokens/store';
 import Perfil from './paginas/perfil/Perfil';
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 //let nome = 'Alinetks'
 
@@ -26,6 +28,7 @@ import Perfil from './paginas/perfil/Perfil';
 function App() {
   return (
     <Provider store={store}>
+      <ToastContainer />
       <Router>
         <Navbar />
         <Switch>

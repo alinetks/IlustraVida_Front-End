@@ -8,6 +8,7 @@ import { login } from "../../services/Service";
 import './Login.css';
 import { addId, addToken } from "../../store/tokens/actions";
 import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 
 function Login() {
     let history = useHistory()
@@ -25,7 +26,6 @@ function Login() {
         token: ""
     })
 
-    // Crie mais um State para pegar os dados retornados a API
     const [respUserLogin, setRespUserLogin] = useState<UserLogin>({
         id: 0,
         nome: '',
@@ -52,11 +52,6 @@ function Login() {
     useEffect(() => {
         if (respUserLogin.token !== "") {
 
-            // Verifica os dados pelo console (Opcional)
-            console.log("Token: " + respUserLogin.token)
-            console.log("ID: " + respUserLogin.id)
-
-            // Guarda as informações dentro do Redux (Store)
             dispatch(addToken(respUserLogin.token))
             dispatch(addId(respUserLogin.id.toString()))    // Faz uma conversão de Number para String
             history.push('/home')
@@ -72,11 +67,29 @@ function Login() {
             setToken por setRespUserLogin */
 
             await login(`/usuarios/logar`, userLogin, setRespUserLogin)
-            alert("Usuário logado com sucesso")
+            toast.success('Usuario logado com sucesso.', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+                });
 
         } catch (error) {
-            alert("Dados do usuário inconsistentes")
-        }
+            toast.error('Erro ao logar, verifique as informações.', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+                });
+            }
     }
 
     return (
