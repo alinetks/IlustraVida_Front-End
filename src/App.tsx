@@ -2,11 +2,7 @@ import React from 'react';
 import Navbar from './componentes/estaticos/navbar/Navbar'
 import Footer from './componentes/estaticos/footer/Footer'
 import Home from './paginas/home/Home';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-
-import { Box, Grid } from '@material-ui/core'
-
-
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Login from './paginas/login/Login';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
@@ -22,6 +18,7 @@ import Perfil from './paginas/perfil/Perfil';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PerfilAtualizar from './paginas/perfil/atualizar/PerfilAtualizar';
+import { Box } from '@material-ui/core';
 
 //let nome = 'Alinetks'
 
@@ -100,7 +97,7 @@ function App() {
         <Footer />
       </Router>
     </Provider>
-  );
+  )
 }
 
 export default App;
