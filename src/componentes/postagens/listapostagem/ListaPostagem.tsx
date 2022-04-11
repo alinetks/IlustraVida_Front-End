@@ -44,51 +44,58 @@ useEffect(() => {
 
   return ( 
     <>
-    {
-      postagens.map(postagem =>(
+    {postagens.map(postagem => (
+        <Box m={4} className='back-post'>
+          <Card variant="outlined" className='style-post'>
+            <CardContent>
 
-      <Box className='back-post' display="flex" justifyContent="center">
-        <Card variant="outlined" className='style-post'>
-          <CardContent>
+              <Typography color="textSecondary" gutterBottom>
+                Postagens
+              </Typography>
 
-            <Typography color="textSecondary" gutterBottom>
-              Postagens
-            </Typography>
+              <Typography variant="h5" component="h2" className='post-style'>
+                {postagem.titulo}
+              </Typography>
 
-            <Typography variant="h5" component="h2" className='post-style'>
-            {postagem.titulo}
-            </Typography>
+              <Typography variant="body2" component="p" className='post-body'>
+                {postagem.texto}
+              </Typography>
 
-            <Typography variant="body2" component="p" className='post-body'>
-            {postagem.texto}
-            </Typography>
- 
-            <Typography variant="body2" component="p">
-            {postagem.tema?.descricao}
-            </Typography>
- 
-          </CardContent>
-          <CardActions>
-            <Box display="flex" justifyContent="center" alignItems='center' mb={1.5}>
+              <Typography variant="body2" component="p">
+                {postagem.tema?.descricao}
+              </Typography>
 
-              <Link to={`/formularioPostagem/${postagem.id}`} className="text-decorator-none" >
-                <Box mx={1}>
-                  <Button variant="contained" id='space' className="botton" size='small' color="primary" >
-                    atualizar
-                  </Button>
-                </Box>
-              </Link>
-              <Link to={`/deletarPostagem/${postagem.id}`} className="text-decorator-none">
-                <Box mx={1}>
-                  <Button variant="contained" className="botton" size='small' color="secondary">
-                    deletar
-                  </Button>
-                </Box>
-              </Link>
-            </Box>
-          </CardActions>
-        </Card>
-      </Box>
+              {/* Add esse campo para mostrar o nome do User que criou a Postagem  */}
+              <Typography variant="body2" component="p">
+                - by. {postagem.usuario?.nome}
+              </Typography>
+
+            </CardContent>
+
+            <CardActions>
+              <Box display="flex" justifyContent="center" mb={2}>
+
+                <Link to={`/formularioPostagem/${postagem.id}`} className="text-decorator-none" >
+                  <Box mx={1}>
+                    <Button variant="contained" className='botton btn-light' size='small' color="primary" >
+                      Atualizar
+                    </Button>
+                  </Box>
+                </Link>
+
+                <Link to={`/deletarPostagem/${postagem.id}`} className="text-decorator-none">
+                  <Box mx={1}>
+                    <Button variant="contained" size='small' color="secondary" className='botton btn-dark'>
+                      Deletar
+                    </Button>
+                  </Box>
+                </Link>
+
+              </Box>
+            </CardActions>
+
+          </Card>
+        </Box>
     ))
   }
 </>

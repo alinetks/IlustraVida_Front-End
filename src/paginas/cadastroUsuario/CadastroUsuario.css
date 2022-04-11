@@ -1,19 +1,46 @@
 .imagem2 img{
-    min-height: 100vh;
+    min-height: 99.6vh;
     margin-right: 10px;
     width: 65vw !important;
 }
 
+#txt-cadastrar{
+    color: #30706f !important;
+
+}
 
 .btnCancelar{
     margin-right: 10px !important;
+    background: #30706f !important;
+    color: #f3c560 !important;
+}
+.btnCancelar:hover{
+    background: #30706f90 !important;
 }
 
 .btnCadastrar{
     margin-left: 10px !important;
+    background-color: #f3c560 !important;
+    color: #30706f !important;
+}
+.btnCadastrar:hover{
+    background-color: #f3c56090 !important;
 }
 
-.MuiInputBase-input{
-    color: #2f2b43 !important;
+
+.boxform .MuiInputBase-input{
+    color: #30706f !important;
+}
+
+.boxform .MuiFormLabel-root.Mui-focused{
+    color: #30706f !important;
+}
+.boxform .MuiOutlinedInput-notchedOutline{
+    border-color: #30706f80 !important;
+}
+
+.boxform .MuiOutlinedImput-root.Mui-focused {
+    border-color: #30706f90 !important;
+    border-width: 2px;
 }
 

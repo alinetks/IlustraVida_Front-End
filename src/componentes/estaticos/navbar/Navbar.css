@@ -1,16 +1,16 @@
 .menu{
-    background: #2f2b43 !important;
+    background: #30706f !important;
     align-items: flex-end;
 }
 
 .menu-text h6{ 
-    color: #b94f51 !important;
-    font-weight: bold !important;
+    color: #fad689 !important;
     margin-right: 15px !important;
+    font-size: 15px;
 }
 
 .menu-text h6:hover{ 
-    color: #8aa3e099 !important;
+    color: #f3c560!important;
     font-weight: bold !important;
 }
 

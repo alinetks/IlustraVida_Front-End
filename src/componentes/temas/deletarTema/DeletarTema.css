@@ -2,14 +2,10 @@
     text-decoration: none; 
 }
 
-.back-deltema{
-   background-color: #2f2b43 !important;
-   padding-bottom: 50px;
-   border-radius: 50px; 
-}
+
 
 .ajust-deltema{
-    box-shadow: #8aa3e099 0px 1px 10px, rgba(0, 0, 0, 0.09) 0px 1px 1px;
+    box-shadow: 1px 3px 1px #9E9E9E;
     width: 50vw;
     height: 20vh;
     text-align: center;
@@ -28,6 +24,18 @@
     font-weight: bold !important;
  }
 
- #space2{
-     margin-left: 140px !important ;
- }
+ .botton.btn-light{
+    background: #f3c560 !important;
+    color: #30706f !important;
+}
+.botton.btn-light:hover{
+    background: #f3c56090 !important;
+}
+
+.botton.btn-dark{
+    background: #30706f !important;
+    color: #f3c560 !important;
+}
+.botton.btn-dark:hover{
+    background: #30706f90 !important;
+}

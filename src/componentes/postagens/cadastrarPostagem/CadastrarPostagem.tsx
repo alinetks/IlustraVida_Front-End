@@ -10,6 +10,7 @@ import './CadastrarPostagem.css'
 import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
+import User from '../../../models/User';
 
 function CadastrarPostagem() { 
     let history = useHistory()
@@ -27,11 +28,24 @@ function CadastrarPostagem() {
         descricao: ''
     })
 
+    const userId = useSelector<UserState, UserState["id"]>(
+        (state) => state.id
+    );
+
     const [postagem, setPostagem] = useState<Postagem>({
         id: 0,
         titulo: '',
         texto: '',
-        tema: null
+        tema: null,
+        usuario: null
+    })
+
+    const [user, setUser] = useState<User>({
+        id: +userId,    // Faz uma conversão de String para Number
+        nome: '',
+        usuario: '',
+        senha: '',
+        foto: ''
     })
 
     useEffect(() => {
@@ -84,7 +98,8 @@ function CadastrarPostagem() {
         setPostagem({
             ...postagem,
             [e.target.name]: e.target.value,
-            tema: tema
+            tema: tema,
+            usuario: user
         })
     }
 

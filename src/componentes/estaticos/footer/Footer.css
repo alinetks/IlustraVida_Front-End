@@ -1,14 +1,14 @@
 .estrutura-rodape{
-    position: flex;
+    position: absolute;
 }
 .rodape{
-    background: #2f2b43 !important;
-    color: #b94f51 !important;
+    background: #fad689 !important;
+    color: #30706f !important;
     height: 120px;
 }
 
 .icons{
-    color: #b94f51 !important; 
+    color: #30706f !important; 
 }
 
 .icons-size{
@@ -16,15 +16,19 @@
 }
 
 .icons :hover{
-    color: #ffffff90 !important;
+    color: #30706f90 !important;
 }
 
 .rodape-copy{
-    background: #2f2b43 !important;
-    color: #b94f51 !important;
+    background: #fad689 !important;
+    color: #30706f !important;
 }
 
 .foot-h5{
-    color: #b94f51 !important;
+    color: #30706f !important;
 }
 
+.text-decorator-none{
+    text-decoration: none !important;
+
+}

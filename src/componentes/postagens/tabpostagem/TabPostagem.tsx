@@ -25,12 +25,16 @@ function TabPostagem() {
           </Box>
         </TabPanel>
         <TabPanel value="2" className='tab-exib'>
-          <Typography variant="h5" id="h5" gutterBottom color="textPrimary" component="h5" align="center" className="h5">Sobre-nós</Typography>
+          <Box className='caixa-sobre'>
+            
+          <Typography variant="h5" gutterBottom align="center" className="h5-sobre">Sobre-nós</Typography>
           <Typography variant="body1" className="body1" gutterBottom align="justify">Olá! Esse é o blog pessoal da Queen, onde relembramos as grandes lições de vida que as animações trouxeram para a nossa história. 
                                                                     Ilustrando a vida através de histórias e desenhos inspiradores e encantadores. 
                                                                     A Queen é uma jovem ilustradora e otimista, que foi profundamente tocada por histórias de heróis e heróinas como a Mulan, que 
                                                                     com sua coragem e senso de dever, mudou para sempre a forma como sua nação veria as mulheres. 
                                                                     Essa história, é apenas uma história, mas que inspirou-a profundamente a tornar realidade. </Typography>
+        
+          </Box>
         </TabPanel>
       </TabContext>
     </>

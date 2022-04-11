@@ -9,15 +9,17 @@ import { toast } from 'react-toastify';
 
 function CadastroUsuario() {
 
-    let history = useHistory();
-    const [confirmarSenha,setConfirmarSenha] = useState<String>("")
+    let history = useHistory()
+
+    const [confirmarSenha, setConfirmarSenha] = useState<String>("")
+
     const [user, setUser] = useState<User>(
         {
             id: 0,
             nome: '',
             usuario: '',
             senha: '',
-            foto: '',
+            foto: ''
         })
 
     const [userResult, setUserResult] = useState<User>(
@@ -26,28 +28,24 @@ function CadastroUsuario() {
             nome: '',
             usuario: '',
             senha: '',
-            foto: '',
+            foto: ''
         })
 
-    useEffect(() =>{
-        if(userResult.id != 0) {
+    useEffect(() => {
+        if (userResult.id !== 0) {
             history.push("/login")
         }
     }, [userResult])
 
-
-    function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>){
+    function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>) {
         setConfirmarSenha(e.target.value)
     }
 
-
     function updatedModel(e: ChangeEvent<HTMLInputElement>) {
-
         setUser({
             ...user,
             [e.target.name]: e.target.value
         })
-
     }
     
     async function cadastrar(e: ChangeEvent<HTMLFormElement>) {
@@ -89,7 +87,7 @@ function CadastroUsuario() {
             <Grid item xs={5} alignItems='center'>
                 <Box paddingX={10}>
                     <form onSubmit={cadastrar}>
-                        <Typography variant='h3' gutterBottom className="h3" component='h3' align='center'>Cadastrar</Typography>
+                        <Typography variant='h3' gutterBottom className="h3" component='h3' align='center' id='txt-cadastrar'>Cadastrar</Typography>
                         <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' label='nome' variant='outlined' name='nome' margin='normal' fullWidth required />
                         <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='email' type='email' variant='outlined' name='usuario' margin='normal'fullWidth required />
                         <TextField value={user.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='foto' label='link da foto' variant='outlined' name='foto' margin='normal'fullWidth />

@@ -1,13 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
+
+.cabecalho-home{
+    background-image: url('https://i.imgur.com/oSjw7ru.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 44vh;
+    width: 100vw;
+}
+
+.titles-home{
+    margin-top: 10%;
+    margin-left: 3%;
+}
+
+.tab-post .MuiAppBar-colorPrimary{
+    background: #30706f !important;
+}
+.tab-post.MuiTab-textColorInherit:hover{
+    background: #30706f90 !important;
+}
+.tab-post .MuiTab-wrapper{
+    color: #f3c560  !important; 
+}
+
 .h3 {
     font-family: 'Quicksand', sans-serif !important;
-    color: #2f2b43 !important; 
+    color: #f3c560  !important; 
     font-weight: bold !important;
 }
 .h5{
     font-family: 'Quicksand', sans-serif !important;
-    color: #2f2b43  !important;
+    color: #f3c560  !important;
     font-weight: bold !important;
 }
 
@@ -15,42 +40,33 @@
     font-family: 'Quicksand', sans-serif !important;
 }
 
-.container{
-    background: #924347 !important;
-    color: #2f2b43 !important;
-} 
-
 .tab-post{
-    width: 100vw;
-    height: 70%;
+    background: linear-gradient(36deg, #30706f90 8%, #f3c56090 80%)!important;
+    font-family: 'Quicksand', sans-serif !important;
+    color: #fff !important;
+    padding-bottom: 150px;
 }
 
-.MuiGrid-root img {
-    flex-grow: 0;
-    display: flex;
-    width: 100%;
-    flex-basis: 100%;
-    padding: 0;
+
+.btn-dark button{
+    background: #30706f !important;
+    color: #f3c560 !important;
+}
+.btn-dark button:hover{
+    background: #0f0e0090 !important;
 }
 
-.img{width: 100%;}
-.img img{ width: 400px;}
-
-.MuiAppBar-colorPrimary{
-    background: #2f2b43!important;
+.btn-light .MuiButton-root:hover{
+    background: #0f0e0090 !important;
 }
-
-button{
-    background: #2f2b43 !important;
-    color: #b94f51 !important;
-}
-button:hover{
-    background-color: #8aa3e0 !important;
-    color: #2f2b43 !important;
+.btn-light button{
+    background-color: #f3c560 !important;
+    color: #30706f !important;
 }
 
 .MuiButton-containedPrimary{
-    color: #2f2b43 !important;
-    background: #b94f51 !important;
+    background-color: #f3c560 !important;
+    color: #30706f !important;
 }
+
 

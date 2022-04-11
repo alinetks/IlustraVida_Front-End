@@ -15,48 +15,45 @@ function Home() {
 
     let history = useHistory()
 
-  const token = useSelector<UserState, UserState["tokens"]>(
-    (state) => state.tokens
-  )
+    const token = useSelector<UserState, UserState["tokens"]>(
+        (state) => state.tokens
+    )
 
-  useEffect(() => {
-    if (token === "") {
-        toast.error('Usuario precisa estar logado.', {
-            position: 'top-right',
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: false,
-            theme: 'colored',
-            progress: undefined,
-        });
-      history.push('/login')
-    }
-  }, [token])
+    useEffect(() => {
+        if (token === "") {
+            toast.error('Usuario precisa estar logado.', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined,
+            });
+            history.push('/login')
+        }
+    }, [token])
 
     return (
         <>
             <Grid container className="container" direction="row" justifyContent="center" alignItems="center">
-                <Grid alignItems="center" item xs={6}>
-                    <Box paddingX={10} >
-                        <Typography variant="h3" gutterBottom className="h3" align="center" >Bem vindo(a)!</Typography>
-                        <Typography variant="h5" gutterBottom className="h5" align="center">Vem ilustrar a vida com a gente!</Typography>
-                    </Box>
-                    <Box display="flex" justifyContent="center">
-                        <Box boxShadow={3} marginRight={1}>
+                <Grid item className='cabecalho-home'>
+                <Grid className='titles-home'>
+                    <Typography variant="h3" gutterBottom className="h3" align="left" >Bem vindo(a)</Typography>
+                    <Typography variant="h5" gutterBottom className="h5" align="left">Ilustre histórias com a gente!</Typography>
+                    <Box display="flex" justifyContent="left">
+                        <Box boxShadow={3} marginRight={1} className="btn-light">
                             <ModalPostagem />
                         </Box>
-                        <Box boxShadow={3} marginRight={1}>
+                        <Box boxShadow={3} marginRight={1} className="btn-dark">
                             <ModalTema />
                         </Box>
                     </Box>
                 </Grid>
-                <Grid item xs={6} className='img'>
-                    <img src='./logo3.png' />
                 </Grid>
 
-                <Grid xs={12} className='tab-post'>
+                <Grid item xs={12} className='tab-post'>
                     <TabPostagem />
                 </Grid>
             </Grid>

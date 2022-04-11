@@ -4,7 +4,7 @@ import Footer from './componentes/estaticos/footer/Footer'
 import Home from './paginas/home/Home';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-import { Grid } from '@material-ui/core'
+import { Box, Grid } from '@material-ui/core'
 
 
 import './App.css';
@@ -19,8 +19,9 @@ import DeletarTema from './componentes/temas/deletarTema/DeletarTema';
 import { Provider } from 'react-redux';
 import store from './store/tokens/store';
 import Perfil from './paginas/perfil/Perfil';
-import {ToastContainer} from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PerfilAtualizar from './paginas/perfil/atualizar/PerfilAtualizar';
 
 //let nome = 'Alinetks'
 
@@ -51,11 +52,15 @@ function App() {
             </Route>
 
             <Route path="/temas">
-              <ListaTema />
+              <Box display='flex' flexWrap='wrap'>
+                <ListaTema />
+              </Box>
             </Route>
 
             <Route path="/postagens">
-              <ListaPostagem />
+              <Box display='flex' flexWrap='wrap'>
+                <ListaPostagem />
+              </Box>
             </Route>
 
             <Route exact path='/formularioPostagem'>
@@ -84,6 +89,10 @@ function App() {
 
             <Route path='/perfil'>
               <Perfil />
+            </Route>
+
+            <Route exact path='/formularioPerfil/:id'>
+              <PerfilAtualizar />
             </Route>
 
           </div>

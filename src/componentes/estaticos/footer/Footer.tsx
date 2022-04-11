@@ -41,11 +41,11 @@ function Footer() {
             </Box>
             <Box className='rodape-copy'>
                 <Box paddingTop={1}>
-                    <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "#b94f51" }} >© 2020 Copyright:</Typography>
+                    <Typography variant="subtitle2" align="center" gutterBottom >© 2020 Copyright:</Typography>
                 </Box>
                 <Box>
-                    <a target="_blank" href="https://brasil.generation.org">
-                        <Typography variant="subtitle2" gutterBottom style={{ color: "#b94f51" }} align="center">brasil.generation.org</Typography>
+                    <a target="_blank" className='text-decorator-none' href="https://brasil.generation.org">
+                        <Typography variant="subtitle2" gutterBottom className='text-decorator-none' align="center">brasil.generation.org</Typography>
                     </a>
                 </Box>
             </Box>

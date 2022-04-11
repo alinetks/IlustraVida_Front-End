@@ -44,34 +44,34 @@ function Navbar() {
                     <Link to='/home' className='text-decorator-none'>
                         <Box className='menu-text cursor' mx={1}>
                             <Typography variant="h6" color="inherit">
-                                home
+                                HOME
                             </Typography>
                         </Box>
                     </Link>
                     <Link to='/postagens' className='text-decorator-none'>
                         <Box className='menu-text cursor' mx={1}>
                             <Typography variant="h6" color="inherit">
-                                postagens
+                                POST
                             </Typography>
                         </Box>
                     </Link>
                     <Link to='/temas' className='text-decorator-none'>
                         <Box className='menu-text cursor' mx={1}>
                             <Typography variant="h6" color="inherit">
-                                temas
+                                TEMAS
                             </Typography>
                         </Box>
                     </Link>
                     <Link to="/perfil" className="text-decorator-none">
                             <Box mx={1} className='menu-text cursor'>
                                 <Typography variant="h6" color="inherit">
-                                    perfil
+                                    PERFIL
                                 </Typography>
                             </Box>
                         </Link>
                     <Box className='menu-text cursor' mx={1} onClick={goLogout}>
                         <Typography variant="h6" color="inherit">
-                            logout
+                            LOGOUT
                         </Typography>
                     </Box>
                 </Box>
