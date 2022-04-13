@@ -81,7 +81,7 @@ function CadastroUsuario() {
 
         <Grid container direction='row' justifyContent='center' alignItems='center' className='boxform'>
             <Grid item xs={7} className='imagem2'>
-                <img src='cadastro.png'></img>
+                <img src='https://i.imgur.com/e4tcac1.png'></img>
             </Grid>
 
             <Grid item xs={5} alignItems='center'>
