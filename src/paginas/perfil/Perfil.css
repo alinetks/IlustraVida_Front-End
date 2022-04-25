@@ -1,9 +1,18 @@
 .card-principal{
     display: flex;
-    border-radius: 32px 0;
+    border-radius: 32px 32px 0 0px;
     padding: 10px;
-    margin: 5% 10%;
-    background-color: #ffffff50;
+    margin: 5% 10% 0 10%;
+    background-color: #30706f50;
+    width: 80vw !important;
+
+}
+.card-secundario{
+    display: flex;
+    border-radius: 0 0 32px 32px;
+    padding: 10px;
+    margin: 0% 0% 10% 10%;
+    /* background-color: #f3c56070; */
     width: 80vw !important;
 
 }

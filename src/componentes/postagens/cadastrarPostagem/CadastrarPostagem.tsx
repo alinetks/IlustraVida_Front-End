@@ -36,6 +36,7 @@ function CadastrarPostagem() {
         id: 0,
         titulo: '',
         texto: '',
+        foto: '',
         tema: null,
         usuario: null
     })
@@ -45,7 +46,8 @@ function CadastrarPostagem() {
         nome: '',
         usuario: '',
         senha: '',
-        foto: ''
+        foto: '',
+        sobre: ""
     })
 
     useEffect(() => {
@@ -178,6 +180,7 @@ function CadastrarPostagem() {
                 <Typography variant="h3" className='h1-postagem' component="h1" align="center" >Cadastrar postagem</Typography>
                 <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
                 <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
+                <TextField value={postagem.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="foto" label="foto" name="foto" variant="outlined" margin="normal" fullWidth />
 
                 <FormControl >
                     <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>

@@ -4,6 +4,7 @@ interface UserLogin {
     usuario: string;
     senha: string;
     foto: string;
+    sobre: string;
     token: string;
 }
 

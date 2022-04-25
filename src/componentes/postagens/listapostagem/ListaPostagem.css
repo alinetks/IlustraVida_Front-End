@@ -8,6 +8,19 @@
     margin: 15px 15px 10px 150px !important;
 }
 
+.float-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.float-card img{
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+}
+
+
 #root{
     background: linear-gradient(36deg, #30706f90 8%, #f3c56090 80%);
 }
@@ -25,9 +38,17 @@
     font-weight: bold !important;
 }
 
+.aling-title{
+    margin-top: 3% !important;
+}
+
+.post-title{
+    font-family: Tahoma, 'Quicksand' !important;
+    font-size: 1.5em !important;
+}
 .post-body{
     font-family: Tahoma, 'Quicksand' !important;
-    font-size: 17px!important;
+    font-size: 1em !important;
 }
 
 

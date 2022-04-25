@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux';
+import { UserState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 import { Link, useHistory } from 'react-router-dom'
 import { Box, Card, CardActions, CardContent, Button, Typography, Grid } from '@material-ui/core';
 import { busca } from '../../../services/Service';
 import Postagem from '../../../models/Postagem';
-import './ListaPostagem.css';
-import { useSelector } from 'react-redux';
-import { UserState } from '../../../store/tokens/tokensReducer';
-import { toast } from 'react-toastify';
+import './PerfilPostagem.css'
 
-function ListaPostagem() {
-  let history = useHistory()
+function PerfilPostagem() {
+    let history = useHistory()
   const [postagens, setPostagens] = useState<Postagem[]>([])
   const token = useSelector<UserState, UserState ["tokens"]>(
     (state) => state.tokens
@@ -40,9 +40,7 @@ useEffect(() => {
   useEffect(() => {
     pegaPostagens()
   }, [postagens.length]) //length = comprimento
-
-
-  return ( 
+  return (
     <>
     {postagens.map(postagem => (
         <Grid container xs={12}>
@@ -113,8 +111,8 @@ useEffect(() => {
         </Grid>
     ))
   }
-</>
-);
+    </>
+  )
 }
 
-export default ListaPostagem;
+export default PerfilPostagem

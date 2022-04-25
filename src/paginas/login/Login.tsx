@@ -23,6 +23,7 @@ function Login() {
         usuario: "",
         senha: "",
         foto: "",
+        sobre: "",
         token: ""
     })
 
@@ -31,8 +32,9 @@ function Login() {
         nome: '',
         usuario: '',
         senha: '',
+        foto: "",
+        sobre: "",
         token: '',
-        foto: ""
     })
 
     useEffect(() => {
@@ -93,9 +95,9 @@ function Login() {
     }
 
     return (
-        <Grid container direction="row" justifyContent="center" alignItems="center" className='boxlogin'>
-            <Grid alignItems="center" xs={6}>
-                <Box paddingX={20}>
+        <Grid container justifyContent="center" alignItems="center" className='form-back'>
+            <Grid xs={8} md={5}>
+                <Box className="container-form-login" alignItems='center' justifyContent='center'>
                     <form onSubmit={onSubmit}>
                         <Typography variant='h3' gutterBottom className="h3" component='h3' align='center' id='txt-entrar' style={{ fontWeight: 'bold' }}>
                             Entrar
@@ -109,8 +111,8 @@ function Login() {
                         </Box>
 
                     </form>
-                    <Box display='flex' justifyContent='center' marginTop={2}>
-                        <Box marginRight={1}>
+                    <Box justifyContent='center' marginTop={5}>
+                        <Box>
                             <Typography variant="subtitle1" gutterBottom align='center'>Não tem uma conta?</Typography>
                         </Box>
                         <Link to='/cadastro' className='text-decorator-none'>
@@ -119,9 +121,6 @@ function Login() {
                     </Box>
 
                 </Box>
-            </Grid>
-
-            <Grid xs={6} className='imagem'>
             </Grid>
         </Grid>
     );

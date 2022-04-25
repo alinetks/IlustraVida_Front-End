@@ -1,7 +1,22 @@
-.imagem2 img{
-    min-height: 99.6vh;
-    margin-right: 10px;
-    width: 65vw !important;
+.boxform{
+    background-image: url(https://i.imgur.com/e4tcac1.png);
+    background-repeat: no-repeat;
+     width: 100vw;
+     height: 100vh;
+     background-size:cover;
+     background-position:bottom;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-form-cad{
+    padding-top: 10% !important;
+    background-color: #f3c560;
+    border-radius: 10px;
+    padding: 15%;
+    height: 60vh;
+    justify-content: center !important;
+    align-items: center !important;
 }
 
 #txt-cadastrar{
@@ -10,37 +25,37 @@
 }
 
 .btnCancelar{
-    margin-right: 10px !important;
     background: #30706f !important;
     color: #f3c560 !important;
+    width: 100%;
+    margin-top: 3% !important;
+    font-weight: bold !important;
+    padding: 2% !important;
 }
 .btnCancelar:hover{
     background: #30706f90 !important;
 }
 
-.btnCadastrar{
+/* .btnCadastrar{
     margin-left: 10px !important;
     background-color: #f3c560 !important;
     color: #30706f !important;
 }
 .btnCadastrar:hover{
     background-color: #f3c56090 !important;
-}
+} */
 
 
 .boxform .MuiInputBase-input{
-    color: #30706f !important;
+    color: #1a5453 !important;
 }
 
 .boxform .MuiFormLabel-root.Mui-focused{
-    color: #30706f !important;
+    color: #1a5453 !important;
 }
 .boxform .MuiOutlinedInput-notchedOutline{
-    border-color: #30706f80 !important;
+    border-color: #1a5453  !important;
 }
 
-.boxform .MuiOutlinedImput-root.Mui-focused {
-    border-color: #30706f90 !important;
-    border-width: 2px;
-}
+
 

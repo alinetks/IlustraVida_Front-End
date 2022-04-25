@@ -10,6 +10,7 @@ import { buscaId } from '../../services/Service'
 import './Perfil.css'
 import { toast } from 'react-toastify'
 import PerfilModal from './modal/PerfilModal'
+import PerfilPostagem from './perfilpost/PerfilPostagem'
 
 function Perfil() {
 
@@ -30,7 +31,8 @@ function Perfil() {
         nome: '',
         usuario: '',
         senha: '',
-        foto: ''
+        foto: '',
+        sobre: '',
     })
 
     useEffect(() => {
@@ -66,37 +68,37 @@ function Perfil() {
     }, [id])
 
     return (
-        <Grid container className='card-principal'>
-            <Grid item xs={5}>
-                <Box className='card-container-imagem texto' display='flex' flexWrap='wrap'>
-                    <img className='card-imagem'
-                        src={user.foto}
-                        alt={user.nome} />
-                    <h1>{user.nome}</h1>
-                    {/* <Box boxShadow={3} marginRight={1} className="btn-light">
+        <Grid container>
+            <Grid container className='card-principal'>
+                <Grid item xs={12} md={5}>
+                    <Box className='card-container-imagem texto' display='flex' flexWrap='wrap'>
+                        <img className='card-imagem'
+                            src={user.foto}
+                            alt={user.nome} />
+                        <h1>{user.nome}</h1>
+                        <Box boxShadow={3} className="btn-light">
                             <PerfilModal />
-                    </Box> */}
-                </Box>
-            </Grid>
-
-            <Grid item xs={7}>
-                <Box className='card-container-info texto'>
-                    <Box>
-                        <h1>Sobre:</h1>
+                        </Box>
                     </Box>
+                </Grid>
 
-                    <p className='card-container-texto'>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam accusantium totam incidunt architecto maiores, perferendis eius. Tempora ullam magni dolore voluptatibus, quidem sunt tempore distinctio ut aliquam modi aliquid officiis.
-                        Assumenda voluptatibus, animi pariatur voluptatum magnam ullam aspernatur optio suscipit incidunt dolor modi quos aperiam. Quam possimus rerum iste nobis quas porro unde sequi, sed nisi labore est voluptas corrupti.
-                        Deleniti officiis sint perspiciatis nisi iste, voluptate sunt asperiores dolor sapiente non corporis omnis voluptatem soluta. Nulla odio alias aperiam, magnam eaque assumenda tempora! Inventore odit iure unde placeat iste.
-                    </p>
+                <Grid item xs={12} md={7}>
+                    <Box className='card-container-info texto'>
+                        <Box>
+                            <h1>Sobre:</h1>
+                        </Box>
 
-                    <p className='card-container-texto'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias consectetur tempore enim hic ad, optio ratione repellendus et. Nemo facilis laborum eum facere ipsam ab ad iusto eligendi deleniti qui?
-                    </p>
-                </Box>
+                        <p className='card-container-texto'>
+                            {user.sobre}
+                        </p>
+
+                    </Box>
+                </Grid>
             </Grid>
-        </Grid>
+            <Grid container className='card-secundario'>
+                <PerfilPostagem />
+            </Grid>
+        </ Grid>
     )
 }
 

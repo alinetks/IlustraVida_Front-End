@@ -3,8 +3,8 @@ import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import {Button,Box } from "@material-ui/core"
 import CloseIcon from '@material-ui/icons/Close';
-import AtualizarPerfil from '../../perfil/atualizar/PerfilAtualizar';
 import './PerfilModal.css'
+import PerfilAtualizar from '../atualizar/PerfilAtualizar'
 
 
 function getModalStyle() {
@@ -48,7 +48,7 @@ function PerfilModal () {
       
       </Box>
       
-      <AtualizarPerfil/>
+      <PerfilAtualizar />
       
     </div>
   );
